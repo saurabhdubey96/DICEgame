@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dice </title>
+</head>
+<style type="text/css">
+	img{
+		width: 300px; height: 400px;
+	}
+	.container{
+		display: flex;
+		justify-content: initial;
+		margin: 30px;
+	}
+</style>
+<body>
+	<h1>Dice Roll</h1>
+
+
+	<div class="container">
+
+	<div>
+		<p>Player 1</p>
+		<img src="images/dice3.png" id="check1">
+	</div>
+	<div>
+		<p>Player 2</p>
+		<img src="images/dice1.png" id="check2">
+	</div>
+	<div>
+		<button onclick="diceRoll()"> Click Here To Roll</button>
+	</div>
+</div>
+
+
+	<script>
+		diceRoll=()=>{
+
+			const player1=Math.ceil(Math.random()*6);
+			const Play1Dice=   `images/dice${player1}.png`
+			document.getElementById("check1").setAttribute("src",Play1Dice);
+
+
+			const player2=Math.ceil(Math.random()*6);
+			const Play2Dice=   `images/dice${player2}.png`
+			document.getElementById("check2").setAttribute("src",Play2Dice);
+
+			if(player1>player2){
+				document.querySelector("h1").innerHTML="Player1 Won";
+			} else if(player1<player2){
+				document.querySelector("h1").innerHTML="player 2 Won";
+			}else{
+				document.querySelector("h1").innerHTML="MAtch Is Draw YOu Have to try again to get a result";
+			}
+
+
+          
+
+		}
+
+	</script>
+
+</body>
+</html>
